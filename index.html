@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度营销</title>
+    <link rel="stylesheet" href="./swiper.min.css">
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            position: relative;
+            min-height: 100vh;
+            background-color: #fff;
+        }
+        .header{
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            box-sizing: border-box;
+            padding: 0% 5% 3% 5%;
+            height: 7vh;
+            background-color: #fff;
+
+        }
+        .logo{
+            height: 3vh;
+        }
+        .moreIcon{
+            height: 3vh;
+            
+        }
+        .banner{
+            width: 100%;
+            height: 30vh;
+        }
+        .bannerImage{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        .publicize{
+            width: 100%;
+        }
+        .Title{
+            width: 100%;
+            text-indent: 15%;
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 3vh;
+        }
+        .subTitle{
+            margin:0% 5% 3% 15%;
+            font-size: 16px;
+            color: #505050;
+            letter-spacing: 1px;
+            max-width: 80%;
+        }
+        .publicizeImages{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .publicizeImages img{
+            width: 17vw;
+            height: 17vw;
+            margin: 2% 3%;
+            border-radius: 5px;
+        }
+        .select_reason{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 2% 0% 5% 0%;
+            margin-top: 5vh;
+            background: linear-gradient(130deg,#3077f2,#3b80f6,#7CADFF);
+        }
+        .select_reason_title{
+            width: 100%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 19px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .select_reason_content{
+            color: #f0f0f0;
+            width: 85%;
+            line-height: 26px;
+            font-size: 14.5px;
+            letter-spacing: 1px;
+        }
+
+
+
+
+        .equipment{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 5vh;
+        }
+        .option_title{
+            line-height: 40px;
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 5vh;
+            margin-bottom: 3vh;
+            width: 100%;
+            text-align: center;
+        }
+        .swiper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+        }
+
+        .swiper-slide {
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .equipment_image_mask{
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000000;
+        }
+        .mask_title{
+            margin-right: auto;
+            color: #fff;
+            line-height: 40px;
+            margin-left: 5%;
+            font-size: 15px;
+        }
+        .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{
+            position: absolute;
+            left:80% !important;
+        }
+        .swiper-pagination-bullet{
+            background-color: #f7f7f7 !important;
+        }
+
+        .business_list{
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 0 auto;
+        }
+        .business{
+            width: 20%;
+            margin: 0% 2.5% 2vh 2.5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .business_cover{
+            width: 80%;
+            border-radius: 50%;
+        }
+        .business_name{
+            line-height: 30px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .quote_list{
+            box-sizing: border-box;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            height: 30vh;
+            overflow-y: auto;
+        }
+
+        .business_quote{
+            box-sizing: border-box;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1vh;
+        }
+        .business_quote_name{
+            padding: 3px 15px;
+            background-color: #3077f2;
+            color: #fff;
+            border-radius: 30px;
+            max-width: 65%;
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            white-space: nowrap;
+        }
+        .Contactus_info{
+            width: 80%;
+            margin: 0 auto;
+            font-size: 16px;
+            color: #333;
+            line-height: 28px;
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            white-space: nowrap;
+        }
+        .Contactus{
+            margin-bottom: 3vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="https://e.m.baidu.com/themes/mob/public/img/logo.png" alt="">
+        <svg class="moreIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1_10)">
+            <path d="M2.46154 0H8C9.35385 0 10.4615 1.10769 10.4615 2.46154V8C10.4615 9.35385 9.35385 10.4615 8 10.4615H2.46154C1.10769 10.4615 0 9.35385 0 8V2.46154C0 1.10769 1.10769 0 2.46154 0ZM2.46154 13.5385H8C9.35385 13.5385 10.4615 14.6462 10.4615 16V21.5385C10.4615 22.8923 9.35385 24 8 24H2.46154C1.10769 24 0 22.8923 0 21.5385V16C0 14.6462 1.10769 13.5385 2.46154 13.5385ZM16 13.5385H21.5385C22.8923 13.5385 24 14.6462 24 16V21.5385C24 22.8923 22.8923 24 21.5385 24H16C14.6462 24 13.5385 22.8923 13.5385 21.5385V16C13.5385 14.6462 14.6462 13.5385 16 13.5385Z" fill="#2F77F1"/>
+            <path d="M19.8769 0.584614L23.0769 3.78461C23.8769 4.58461 23.8769 5.84615 23.0769 6.64615L19.8769 9.87692C19.0769 10.6769 17.8154 10.6769 17.0154 9.87692L13.8154 6.64615C13.0154 5.84615 13.0154 4.58461 13.8154 3.78461L17.0462 0.584614C17.8154 -0.184617 19.1077 -0.184617 19.8769 0.584614Z" fill="#AFFCFE"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_1_10">
+            <rect width="24" height="24" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            
+    </div>
+    <!-- 宣传图 -->
+    <div class="banner">
+        <img src="https://ebd-site.cdn.bcebos.com/newbaidu/upload/cms/20210917/e91e75aba5c317f497f631bbc10d645d.png" alt="" class="bannerImage">
+    </div>
+
+    <!-- 宣传语&宣传图 -->
+    <div class="publicize">
+        <div class="Title">用精湛印刷工艺</div>
+        <div class="subTitle">为您的创意赋予绚烂色彩，传递无限可能</div>
+        <div class="publicizeImages">
+            <img src="https://img95.699pic.com/photo/60019/6252.jpg_wh860.jpg" alt="">
+            <img src="https://ts1.cn.mm.bing.net/th/id/R-C.9232b7072c9c5f44b6ddf3cd264d4ed3?rik=QSN3ojagLnJVfA&riu=http%3a%2f%2fwww.aoprinter.com%2fresource%2fimages%2f30b04c9643f34364ae01fc80a17c2835_6.jpg&ehk=4lPdEL8zpdlsVpIIyW1%2b9ZgyBaFXt%2bpyu6w3DzJArLM%3d&risl=&pid=ImgRaw&r=0" alt="">
+            <img src="https://img95.699pic.com/photo/30682/0018.jpg_wh300.jpg!/fh/300/quality/90" alt="">
+            <img src="https://photo-static-api.fotomore.com/creative/vcg/veer/612/veer-134945451.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- 选择我们的原因 -->
+    <div class="select_reason">
+        <div class="select_reason_title">选择我们的原因</div>
+        <div class="select_reason_content">[印刷厂名称]，一家专注于印刷艺术的工厂。我们融合创新理念与传统工艺，将您的构想转化为触手可及的精美印刷品。凭借丰富的经验和严格的质量把控，为您的每一次印刷需求提供可靠保障。</div>
+    </div>
+
+    <!-- 设备与技术 -->
+    <div class="equipment">
+        <div class="option_title">
+            设备与技术
+        </div>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.NePaf8ji2dn7cASFKALtrQHaE4?w=1200&h=792&rs=1&pid=ImgDetMain" alt="">
+                <div class="equipment_image_mask">
+                    <div class="mask_title">印刷机</div>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.NePaf8ji2dn7cASFKALtrQHaE4?w=1200&h=792&rs=1&pid=ImgDetMain" alt="">
+                <div class="equipment_image_mask">
+                    <div class="mask_title">印刷机</div>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.NePaf8ji2dn7cASFKALtrQHaE4?w=1200&h=792&rs=1&pid=ImgDetMain" alt="">
+                <div class="equipment_image_mask">
+                    <div class="mask_title">印刷机</div>
+                </div>
+            </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!-- 主营业务 -->
+    <div class="Mainbusiness">
+        <div class="option_title">
+            主营业务
+        </div>
+
+        <div class="business_list">
+            <div class="business">
+                <img src="https://img.alicdn.com/i1/2212955752182/O1CN01ByLbzw1RzOzVlfR5G_!!2212955752182.jpg_500x500.jpg" class="business_cover">
+                <div class="business_name">
+                    哑光印刷
+                </div>
+            </div>
+            <div class="business">
+                <img src="https://img.alicdn.com/i1/2212955752182/O1CN01ByLbzw1RzOzVlfR5G_!!2212955752182.jpg_500x500.jpg" class="business_cover">
+                <div class="business_name">
+                    哑光印刷
+                </div>
+            </div>
+            <div class="business">
+                <img src="https://img.alicdn.com/i1/2212955752182/O1CN01ByLbzw1RzOzVlfR5G_!!2212955752182.jpg_500x500.jpg" class="business_cover">
+                <div class="business_name">
+                    哑光印刷
+                </div>
+            </div>
+            <div class="business">
+                <img src="https://img.alicdn.com/i1/2212955752182/O1CN01ByLbzw1RzOzVlfR5G_!!2212955752182.jpg_500x500.jpg" class="business_cover">
+                <div class="business_name">
+                    哑光印刷
+                </div>
+            </div>
+            <div class="business">
+                <img src="https://img.alicdn.com/i1/2212955752182/O1CN01ByLbzw1RzOzVlfR5G_!!2212955752182.jpg_500x500.jpg" class="business_cover">
+                <div class="business_name">
+                    哑光印刷
+                </div>
+            </div>
+            <div class="business">
+                <img src="https://img.alicdn.com/i1/2212955752182/O1CN01ByLbzw1RzOzVlfR5G_!!2212955752182.jpg_500x500.jpg" class="business_cover">
+                <div class="business_name">
+                    哑光印刷
+                </div>
+            </div>
+            <div class="business">
+                <img src="https://img.alicdn.com/i1/2212955752182/O1CN01ByLbzw1RzOzVlfR5G_!!2212955752182.jpg_500x500.jpg" class="business_cover">
+                <div class="business_name">
+                    哑光印刷
+                </div>
+            </div>
+            <div class="business">
+                <img src="https://img.alicdn.com/i1/2212955752182/O1CN01ByLbzw1RzOzVlfR5G_!!2212955752182.jpg_500x500.jpg" class="business_cover">
+                <div class="business_name">
+                    哑光印刷
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+
+    <!-- 价格报价 -->
+    <div class="Pricequote">
+        <div class="option_title">
+            价格报价
+        </div>
+
+        <div class="quote_list">
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）哑光印刷（普通版）</div>
+                <div class="business_quote_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+            <div class="business_quote">
+                <div class="business_quote_name">哑光印刷（普通版）</div>
+                <div class="busines_quotes_price">206￥</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系我们 -->
+    <div class="Contactus">
+        <div class="option_title">
+            联系我们
+        </div>
+
+        <div class="Contactus_info Contactus_address">
+            公司地址：广东省广州市白云区xxx街道xxx号
+        </div>
+        <div class="Contactus_info Contactus_phone">联系电话：xxxxxxxxxxx</div>
+        <div class="Contactus_info Contactus_weixin">客服微信：xxxxxxxxxxx</div>
+    </div>
+
+    <script src="./swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+            },
+        });
+    </script>
+</body>
+</html>
